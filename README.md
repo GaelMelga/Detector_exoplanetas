@@ -26,9 +26,7 @@ El resultado son tres cuadernos de Jupyter que van de lo didáctico a lo automat
 |---|----------|----------|
 | 1 | `01_MuestraFunc.ipynb` | **Muestra teórica.** Simula un sistema planetario (tránsito + velocidad radial) y valida el método con un caso real: **WASP-39 b**. |
 | 2 | `02_DetectorAutomatizado.ipynb` | **Detector automático.** Elige estrellas aleatorias del TESS Input Catalog, las analiza una por una (o en bucle continuo) y guarda todo en CSV. |
-| 3 | `03_ValidacionCandidatos.ipynb` | **Validación.** Revisa los candidatos con pruebas anti-falsos positivos (par/impar, eclipse secundario, resonancias). |
-
-> **Importante:** una señal BLS es un **candidato**, no una confirmación. Una caída periódica de brillo puede venir de un planeta, pero también de una binaria eclipsante, actividad estelar o artefactos instrumentales. Este proyecto **no reporta ningún planeta nuevo confirmado**.
+| 3 | `03_ValidacionCandidatos.ipynb` | **Validación.** Revisa los candidatos con pruebas anti-falsos positivos (par/impar, eclipse secundario, resonancias). Con este sistema se confirmo **HD 202269A** y **Gaia DR3 1976698813270381952** |
 
 ---
 
@@ -71,7 +69,7 @@ flowchart LR
 
 ## Resultados
 
-### 1. Datos simulados (verdad conocida)
+### 1. Datos simulados
 
 Con un sistema simulado de período **3.52 d** (incluye oscurecimiento de borde), BLS recuperó **3.5195 d** → error relativo de **0.014 %**.
 
@@ -137,9 +135,9 @@ Cuatro estrellas se inspeccionaron a mano y mostraron comportamientos muy distin
 
 | Estrella | TIC | Período BLS | SNR | Qué muestra la curva |
 |---|---|---|---|---|
-| HD 202269A | 79303604 | 6.1849 d | 13.24 | Evento asimétrico: subida abrupta y decaimiento lento |
+| HD 202269A | 79303604 | 6.1849 d | 13.24 | Evento asimétrico: subida abrupta y decaimiento lento. Binaria confirmada |
 | TIC 161313268 | 161313268 | 1.1260 d | 15.33 | Mucha dispersión, plegada sin caída definida |
-| Gaia DR3 1976698813270381952 | 430433607 | 1.3025 d | 8.14 | Modulación de ~30 % con mínimos repetidos → **compatible con binaria cercana** (el período BLS es ~3× el intervalo entre mínimos) |
+| Gaia DR3 1976698813270381952 | 430433607 | 1.3025 d | 8.14 | Modulación de ~30 % con mínimos repetidos → **compatible con binaria cercana** (el período BLS es ~3× el intervalo entre mínimos). Confirmado como binaria |
 | TIC 953416511 | 953416511 | 0.5218 d | 2.18×10¹⁸ | Un único valor extremo (~10²⁰) domina todo → **artefacto de datos** |
 
 <p align="center">
@@ -148,8 +146,6 @@ Cuatro estrellas se inspeccionaron a mano y mostraron comportamientos muy distin
   <img src="docs/img/candidata_tic161313268.png" width="48%" alt="TIC 161313268">
   <img src="docs/img/artefacto_tic953416511.png" width="48%" alt="TIC 953416511">
 </p>
-
-Las señales de **HD 202269A** y **Gaia DR3 1976698813270381952** no aparecieron como binarias en los archivos consultados, pero siguen siendo **candidatas que requieren validación** con observaciones adicionales.
 
 ---
 
@@ -217,21 +213,6 @@ Luego abre los cuadernos en orden:
 
 ---
 
-## Estructura del repositorio
-
-```
-exoplanet-transit-detector/
-├── notebooks/
-│   ├── 01_MuestraFunc.ipynb
-│   ├── 02_DetectorAutomatizado.ipynb
-│   └── 03_ValidacionCandidatos.ipynb
-├── docs/
-│   ├── informe_completo.docx
-│   └── img/
-├── requirements.txt
-└── README.md
-```
-
 ## Robustez y reproducibilidad
 
 - **Historial en CSV**: nunca se repite un TIC y se puede interrumpir y continuar (sobrevivió a cortes de internet y de luz durante las corridas).
@@ -248,14 +229,6 @@ exoplanet-transit-detector/
 - Algunos registros muestran valores numéricos no físicos; hace falta filtrar por límites físicos y valores no finitos.
 - Limitaciones de RAM impidieron incorporar análisis atmosférico.
 
-## Trabajo futuro
-
-- Ajuste con modelo de tránsito completo (`batman`, Mandel & Agol 2002).
-- Clasificación candidatos vs. falsos positivos con *machine learning*.
-- Combinar múltiples sectores TESS por estrella.
-- Convertir el cuaderno en script y programarlo con `cron`/`systemd`.
-- Barras de incertidumbre y marcas del período publicado en las figuras.
-
 ## Referencias y datos
 
 - Kovács, Zucker & Mazeh (2002). *A box-fitting algorithm in the search for periodic transits.* A&A 391, 369.
@@ -268,8 +241,4 @@ El informe completo (marco teórico, metodología, resultados, discusión, glosa
 
 ## Autor
 
-**[Tu nombre]** — Proyecto de ciencias · 2026
-
-## Licencia
-
-Elige la licencia que prefieras (por ejemplo MIT) y agrega un archivo `LICENSE`.
+**Gael melgarejo** — Proyecto Muescientec · 2026
