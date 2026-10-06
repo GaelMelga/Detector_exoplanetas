@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🔭 Detector de Exoplanetas con datos de TESS
+#  Detector de Exoplanetas con datos de TESS
 
 **Un pipeline en Python que busca tránsitos planetarios en curvas de luz públicas de la NASA, usando solo software libre.**
 
@@ -14,7 +14,7 @@
 
 ---
 
-## 📖 ¿De qué trata?
+##  ¿De qué trata?
 
 Misiones como **TESS** entregan curvas de luz de una cantidad enorme de estrellas, pero la mayoría está sin revisar en detalle. Este proyecto reproduce, a pequeña escala y en una computadora personal, el tipo de limpieza y búsqueda que hacen las grandes agencias espaciales:
 
@@ -28,7 +28,7 @@ El resultado son tres cuadernos de Jupyter que van de lo didáctico a lo automat
 | 2 | [`02_DetectorAutomatizado.ipynb`](notebooks/02_DetectorAutomatizado.ipynb) | **Detector automático.** Elige estrellas aleatorias del TESS Input Catalog, las analiza una por una (o en bucle continuo) y guarda todo en CSV. |
 | 3 | [`03_ValidacionCandidatos.ipynb`](notebooks/03_ValidacionCandidatos.ipynb) | **Validación.** Revisa los candidatos con pruebas anti-falsos positivos (par/impar, eclipse secundario, resonancias). |
 
-> ⚠️ **Importante:** una señal BLS es un **candidato**, no una confirmación. Una caída periódica de brillo puede venir de un planeta, pero también de una binaria eclipsante, actividad estelar o artefactos instrumentales. Este proyecto **no reporta ningún planeta nuevo confirmado**.
+>  **Importante:** una señal BLS es un **candidato**, no una confirmación. Una caída periódica de brillo puede venir de un planeta, pero también de una binaria eclipsante, actividad estelar o artefactos instrumentales. Este proyecto **no reporta ningún planeta nuevo confirmado**.
 
 ---
 
@@ -69,7 +69,7 @@ flowchart LR
 
 ---
 
-## 📊 Resultados
+##  Resultados
 
 ### 1. Datos simulados (verdad conocida)
 
@@ -153,7 +153,7 @@ Las señales de **HD 202269A** y **Gaia DR3 1976698813270381952** no aparecieron
 
 ---
 
-## 🧪 Etapa de validación de candidatos
+##  Etapa de validación de candidatos
 
 [`03_ValidacionCandidatos.ipynb`](notebooks/03_ValidacionCandidatos.ipynb) toma el CSV del detector y revisa cada `posible_transito` / `posible_segunda_senal`:
 
@@ -168,7 +168,7 @@ Descarga **todos los sectores TESS** disponibles, genera una figura de 4 paneles
 
 ---
 
-## 🚀 Instalación y uso
+##  Instalación y uso
 
 ```bash
 git clone https://github.com/<tu-usuario>/exoplanet-transit-detector.git
@@ -187,7 +187,7 @@ Luego abre los cuadernos en orden:
 2. **`02_DetectorAutomatizado`** – ajusta la sección **B. Configuración** y pulsa **ANALIZAR UNA ESTRELLA**, o ejecuta la última celda para el **modo automático continuo** (detenlo con *Kernel → Interrupt*).
 3. **`03_ValidacionCandidatos`** – revisa los candidatos pendientes uno por uno.
 
-> 📁 **Antes de ejecutar:** cambia `CARPETA_SALIDA` en la celda de configuración (en los cuadernos 2 y 3 apunta a una ruta de la computadora del autor). Se necesita conexión a internet para consultar MAST y el NASA Exoplanet Archive.
+>  **Antes de ejecutar:** cambia `CARPETA_SALIDA` en la celda de configuración (en los cuadernos 2 y 3 apunta a una ruta de la computadora del autor). Se necesita conexión a internet para consultar MAST y el NASA Exoplanet Archive.
 
 ### Parámetros principales (cuaderno 2)
 
@@ -217,7 +217,7 @@ Luego abre los cuadernos en orden:
 
 ---
 
-## 🗂️ Estructura del repositorio
+##  Estructura del repositorio
 
 ```
 exoplanet-transit-detector/
@@ -232,7 +232,7 @@ exoplanet-transit-detector/
 └── README.md
 ```
 
-## 🛡️ Robustez y reproducibilidad
+##  Robustez y reproducibilidad
 
 - **Historial en CSV**: nunca se repite un TIC y se puede interrumpir y continuar (sobrevivió a cortes de internet y de luz durante las corridas).
 - **Manejo de errores**: si una estrella falla, el programa registra el error y sigue con la siguiente.
@@ -240,7 +240,7 @@ exoplanet-transit-detector/
 - **Memoria controlada**: se libera la figura de cada estrella para que sesiones largas no agoten la RAM.
 - **Todo abierto**: solo software libre y datos públicos (MAST, NASA Exoplanet Archive).
 
-## ⚠️ Limitaciones
+##  Limitaciones
 
 - BLS usa un modelo de caja, no un modelo físico completo del tránsito.
 - Los parámetros derivados (radio, densidad, Teq) dependen de supuestos y de catálogos estelares.
@@ -248,15 +248,7 @@ exoplanet-transit-detector/
 - Algunos registros muestran valores numéricos no físicos; hace falta filtrar por límites físicos y valores no finitos.
 - Limitaciones de RAM impidieron incorporar análisis atmosférico.
 
-## 🔮 Trabajo futuro
-
-- Ajuste con modelo de tránsito completo (`batman`, Mandel & Agol 2002).
-- Clasificación candidatos vs. falsos positivos con *machine learning*.
-- Combinar múltiples sectores TESS por estrella.
-- Convertir el cuaderno en script y programarlo con `cron`/`systemd`.
-- Barras de incertidumbre y marcas del período publicado en las figuras.
-
-## 📚 Referencias y datos
+##  Referencias y datos
 
 - Kovács, Zucker & Mazeh (2002). *A box-fitting algorithm in the search for periodic transits.* A&A 391, 369.
 - Mayor & Queloz (1995). *A Jupiter-mass companion to a solar-type star.* Nature 378, 355.
@@ -264,12 +256,4 @@ exoplanet-transit-detector/
 - [NASA Exoplanet Archive](https://exoplanetarchive.ipac.caltech.edu)
 - [Lightkurve](https://docs.lightkurve.org) · [Astropy](https://www.astropy.org) · [Astroquery](https://astroquery.readthedocs.io)
 
-El informe completo (marco teórico, metodología, resultados, discusión, glosario y bibliografía) está en [`docs/informe_completo.docx`](docs/informe_completo.docx).
 
-## 👤 Autor
-
-**[Tu nombre]** — Proyecto de ciencias · 2026
-
-## 📄 Licencia
-
-Elige la licencia que prefieras (por ejemplo [MIT](https://choosealicense.com/licenses/mit/)) y agrega un archivo `LICENSE`.
