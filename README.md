@@ -8,7 +8,7 @@
 ![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-F37626?logo=jupyter&logoColor=white)
 ![Datos](https://img.shields.io/badge/Datos-TESS%20%2F%20MAST-0B3D91)
 ![Algoritmo](https://img.shields.io/badge/Algoritmo-Box%20Least%20Squares-blueviolet)
-![Estado](https://img.shields.io/badge/Estado-Prototipo%20de%20investigación-orange)
+
 
 </div>
 
