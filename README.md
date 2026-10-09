@@ -7,7 +7,6 @@
 ![Python](https://img.shields.io/badge/Python-3.9%2B-3776AB?logo=python&logoColor=white)
 ![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-F37626?logo=jupyter&logoColor=white)
 ![Datos](https://img.shields.io/badge/Datos-TESS%20%2F%20MAST-0B3D91)
-![Algoritmo](https://img.shields.io/badge/Algoritmo-Box%20Least%20Squares-blueviolet)
 
 
 </div>
@@ -26,7 +25,7 @@ El resultado son tres cuadernos de Jupyter que van de lo didáctico a lo automat
 |---|----------|----------|
 | 1 | `01_MuestraFunc.ipynb` | **Muestra teórica.** Simula un sistema planetario (tránsito + velocidad radial) y valida el método con un caso real: **WASP-39 b**. |
 | 2 | `02_DetectorAutomatizado.ipynb` | **Detector automático.** Elige estrellas aleatorias del TESS Input Catalog, las analiza una por una (o en bucle continuo) y guarda todo en CSV. |
-| 3 | `03_ValidacionCandidatos.ipynb` | **Validación.** Revisa los candidatos con pruebas anti-falsos positivos (par/impar, eclipse secundario, resonancias). Con este sistema se confirmo **HD 202269A** y **Gaia DR3 1976698813270381952** |
+| 3 | `03_ValidacionCandidatos.ipynb` | **Validación.** Revisa los candidatos con pruebas anti-falsos positivos (par/impar, eclipse secundario, resonancias). Con este sistema se confirmo **HD 202269A** y **Gaia DR3 1976698813270381952** como sistemas binarios |
 
 ---
 
