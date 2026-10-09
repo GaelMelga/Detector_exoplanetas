@@ -41,7 +41,7 @@ flowchart LR
     E --> F[Plegado de fase]
     E --> G[Búsqueda de<br/>2ª señal]
     F --> H[Parámetros físicos<br/>R, a, Teq]
-    H --> I[Comparación con<br/>NASA Exoplanet Archive]
+    H & G --> I[Comparación con<br/>NASA Exoplanet Archive]
     I --> J[(CSV + historial<br/>+ figura PNG)]
     I --> K[(Análisis de datos con verificador)]
 ```
