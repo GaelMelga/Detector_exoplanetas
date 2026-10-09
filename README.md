@@ -42,7 +42,8 @@ flowchart LR
     E --> G[Búsqueda de<br/>2ª señal]
     F --> H[Parámetros físicos<br/>R, a, Teq]
     H --> I[Comparación con<br/>NASA Exoplanet Archive]
-    I --> J[(CSV + historial<br/>+ figura PNG)]
+    I --> J[CSV + historial<br/>+ figura PNG]
+    J --> K[(Análisis de datos con verificador)]
 ```
 
 1. **Selección** – TIC aleatorio con magnitud < 13 que no esté en el historial.
