@@ -56,6 +56,7 @@ flowchart LR
 8. **Parámetros físicos** – radio planetario, semieje mayor (3.ª ley de Kepler) y temperatura de equilibrio.
 9. **Contraste** – consulta TAP al NASA Exoplanet Archive y calcula el error relativo del período.
 10. **Registro** – fila en CSV, historial anti-repetición y figura de 4 paneles por estrella.
+11. **Verificación** - Consulta al programa de verificación y da el veredicto
 
 ### Las matemáticas detrás
 
